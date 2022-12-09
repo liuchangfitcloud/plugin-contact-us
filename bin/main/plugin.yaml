@@ -1,0 +1,21 @@
+apiVersion: plugin.halo.run/v1alpha1
+kind: Plugin
+metadata:
+  # The name defines how the plugin is invoked,A unique name
+  name: PluginContactUs
+spec:
+  enabled: true
+  # 'version' is a valid semantic version string (see semver.org).
+  version: 1.0.0-SNAPSHOT
+  requires: "*"
+  author:
+    name: shrChang.Liu
+    website: https://github.com/halo-dev
+  logo: logo.png
+  settingName: contact-us-settings
+  configMapName: contact-us-settings
+  homepage: https://github.com/halo-dev/plugin-starter
+  displayName: "联系我们"
+  description: "这是一个联系我们的插件"
+  license:
+    - name: "MIT"
