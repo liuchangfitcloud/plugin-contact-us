@@ -1,0 +1,23 @@
+apiVersion: v1alpha1
+kind: Role
+metadata:
+  name: role-template-contact-us-add
+rules:
+  - apiGroups: [ "contact.halo.run" ]
+    resources: [ "contacts" ]
+    verbs: [ "*" ]
+---
+apiVersion: v1alpha1
+kind: RoleBinding
+metadata:
+  name: contact-us-anonymous
+subjects:
+  # 指定匿名用户可以获取到
+  - kind: User
+    name: anonymousUser # "name" 是区分大小写的
+    apiGroup: ""
+roleRef:
+  # "roleRef" 指定与某 Role 的绑定关系
+  kind: Role # 此字段必须是 Role
+  name: role-template-contact-us-add # 此字段必须与你要绑定的 Role 的名称匹配
+  apiGroup: ""

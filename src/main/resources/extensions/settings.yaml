@@ -1,0 +1,26 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: contact-us-settings
+spec:
+  forms:
+    - group: basic
+      label: 设置
+      formSchema:
+        - $formkit: text
+          label: 联系电话
+          name: phone
+          validation: required
+          value: 131xxxxxx
+        - $formkit: text
+          label: 电子邮箱
+          help: 电子邮箱
+          name: email
+          validation: required
+          value: halo@fit2cloud.com
+        - $formkit: text
+          label: 公司地址
+          name: address
+          validation: required
+          help: 公司所在地址
+          value: 杭州飞致云
